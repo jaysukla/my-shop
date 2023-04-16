@@ -1,0 +1,12 @@
+#add{
+    width: 97%;
+    border: 1px solid grey ;
+    /* display: flex;
+    justify-content: space-around; */
+    margin: auto;
+}
+#main-add{
+  
+    width: 100%;
+    text-align: center;
+}

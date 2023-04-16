@@ -1,10 +1,11 @@
 const express = require('express');
+var cors = require('cors')
 const {Fregrence} = require('../schema/schema')
 var jwt = require('jsonwebtoken');
 const {watchman} = require('../middlewere/watchman')
 const app = express()
 app.use(express.json())
-
+app.use(cors())
 
 const fregrencerouter = express.Router()
 

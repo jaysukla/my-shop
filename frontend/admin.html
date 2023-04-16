@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./admin.css">
+</head>
+<body>
+<div id="main-add">
+  <h1>Add new products</h1>
+  <div id="add">
+
+    <form id="adddata">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"  placeholder="Product name" required>
+    
+      <label for="image">Image URL:</label>
+      <input type="url" id="image" name="image" placeholder="Image url" required>
+    
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" placeholder="Product price" required>
+    
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" placeholder="Products description" required></textarea>
+    
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected>Select a category</option>
+        <option value="Limited">Limited</option>
+        <option value="New">New</option>
+        <option value="Skin">Skin</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Fragrance">Fragrance</option>
+      </select>
+    
+      <button type="submit">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+<!-- Update form  -->
+
+
+<div id="main-add">
+  <h1>Update Products </h1>
+  <div id="add">
+
+    <form id="updata">
+      <label for="name">Id:</label>
+      <input type="text" id="upid" name="id"  placeholder="Product Id" >
+
+      <label for="name">Name:</label>
+      <input type="text" id="upname" name="name"  placeholder="Product name" >
+    
+      <label for="image">Image URL:</label>
+      <input type="url" id="upimage" name="image" placeholder="Image url" >
+    
+      <label for="price">Price:</label>
+      <input type="number" id="upprice" name="price" placeholder="Product price" >
+    
+      <label for="description">Description:</label>
+      <textarea id="updescription" name="description" placeholder="Products description" ></textarea>
+    
+      <label for="category">Category:</label>
+      <select id="upcategory" name="category" required>
+        <option value="" disabled selected>Select a category</option>
+        <option value="Limited">Limited</option>
+        <option value="New">New</option>
+        <option value="Skin">Skin</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Fragrance">Fragrance</option>
+      </select>
+    
+      <button type="submit">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+
+<!-- delete  form  -->
+
+<div id="main-add">
+  <h1>Update Products </h1>
+  <div id="add">
+
+    <form id="Ddata">
+      <label for="name">Id:</label>
+      <input type="text" id="Did" name="id"  placeholder="Product Id" >
+
+  
+      <label for="category">Category:</label>
+      <select id="Dcategory" name="category" required>
+        <option value="" disabled selected>Select a category</option>
+        <option value="limited">limited</option>
+        <option value="new">new</option>
+        <option value="skin">skin</option>
+        <option value="fashion">fashion</option>
+        <option value="fragrance">fragrance</option>
+      </select>
+    
+      <button type="submit">Submit</button>
+    </form>
+
+
+  </div>
+</div>
+
+</body>
+</html>
+<script src="./admin.js">  </script>

@@ -1,10 +1,12 @@
 const express = require('express');
+var cors = require('cors')
 const {connection ,Limited,New , Skin, Fashion , Fregrence ,User} = require('./schema/schema')
 var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 const {watchman} = require('./middlewere/watchman')
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 
@@ -23,7 +25,7 @@ let data=req.body ;
 let type = data.type || "user";
 bcrypt.hash(data.password, 5, function(err, hash) {
     // Store hash in your password DB.
-    User.insertMany({name:data.name,email:data.email,password:hash,type:type})
+   User.insertMany({name:data.name,email:data.email,password:hash,type:type})
     // console.log(hash)
 });
 // console.log(data)
@@ -43,7 +45,7 @@ let data = req.body;
 let d=await User.find({email:data.email});
 let hash= d[0].password;
 let type= d[0].type
-// console.log(type)
+console.log(type)
 bcrypt.compare(data.password, hash, function(err, result) {
 if(err){
     res.send({"msg":"err","err":err})
@@ -56,7 +58,7 @@ if(err){
 
 
 });
-// console.log(data,d)
+console.log(data,d)
 
 })
 
