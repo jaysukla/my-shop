@@ -22,7 +22,7 @@ fashionrouter.get("/", async(req,res)=>{
 fashionrouter.post("/",watchman, async(req,res)=>{
     let data=req.body;
     
-    New.insertMany([data])
+    Fashion.insertMany([data])
     
     res.send({"msg":"product added successfully"})
     

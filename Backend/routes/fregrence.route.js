@@ -21,7 +21,7 @@ fregrencerouter.get("/", async(req,res)=>{
 
 fregrencerouter.post("/",watchman, async(req,res)=>{
     let data=req.body;
-    
+    console.log(data)
     Fregrence.insertMany([data])
     
     res.send({"msg":"product added successfully"})

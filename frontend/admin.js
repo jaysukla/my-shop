@@ -21,11 +21,12 @@ form.addEventListener('submit',async (event) => {
   }; 
 
 
-let res = await fetch(`http://localhost:8080/${category}`,{
+let res = await fetch(`https://gifted-toad-pleat.cyclic.app/${category}`,{
   method:'POST',
 headers:{
   'Content-Type': 'application/json',
-  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteXNob3AiOiJNWVNIT1AiLCJpYXQiOjE2ODE0NzU1NzEsImV4cCI6MTY4MjA4MDM3MX0.XaXOCkfxy46nIAIesfjSZ80Qs6iToWveaT5E67SE2_g"
+  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteXNob3AiOiJNWVNIT1AiLCJpYXQiOjE2ODE0NzU1NzEsImV4cCI6MTY4MjA4MDM3MX0.XaXOCkfxy46nIAIesfjSZ80Qs6iToWveaT5E67SE2_g",
+  "rtoken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteXNob3AiOiJTSE9QIiwiaWF0IjoxNjgxNzQ2MjgzLCJleHAiOjE2ODI2MTAyODN9.iHI2XmsyTkyul_VjxCba6Go_cZrOHv94QLI_BuZAY-M"
 },
 body:JSON.stringify(data)
 })
@@ -74,11 +75,12 @@ if(description!=""){
 // console.log(data)
 
 
-let res = await fetch(`http://localhost:8080/${category}?id=${id}`,{
+let res = await fetch(`https://gifted-toad-pleat.cyclic.app/${category}?id=${id}`,{
   method:'PUT',
 headers:{
   'Content-Type': 'application/json',
-  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteXNob3AiOiJNWVNIT1AiLCJpYXQiOjE2ODE0NzU1NzEsImV4cCI6MTY4MjA4MDM3MX0.XaXOCkfxy46nIAIesfjSZ80Qs6iToWveaT5E67SE2_g"
+  "authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJteXNob3AiOiJNWVNIT1AiLCJpYXQiOjE2ODE3NDYyODMsImV4cCI6MTY4MjM1MTA4M30.dpjzlOwA6KMZZsyXv7GRuDCAqAhpxqGvFENMXpqk3Jc",
+ 
 },
 body:JSON.stringify(data)
 })
@@ -108,7 +110,7 @@ const id=document.getElementById('Did').value
 
   
   
-let res = await fetch(`http://localhost:8080/${category}?id=${id}`,{
+let res = await fetch(`https://gifted-toad-pleat.cyclic.app/${category}?id=${id}`,{
   method:'DELETE',
 headers:{
   'Content-Type': 'application/json',
