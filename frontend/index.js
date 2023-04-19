@@ -23,6 +23,13 @@ console.log("fashion",data)
 fashion()
 
 
+
+
+
+
+
+
+
 async function fregrence(){
  
     let d = await fetch('https://gifted-toad-pleat.cyclic.app/fregrence')
