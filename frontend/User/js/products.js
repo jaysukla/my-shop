@@ -482,11 +482,6 @@ function append_fregrence(data){
 
 
 
-function cart(el){
-console.log(el)
-}
-
-
 
 
 
@@ -576,4 +571,37 @@ window.location.reload()
 
 
 }
+
+
+
+
+
+/// adding products to cart 
+
+
+
+
+function cart(el){
+    let CART =JSON.parse(localStorage.getItem("M-cart")) || [] ;
+    console.log(el)
+
+    CART.push(el)
+
+
+    localStorage.setItem('M-cart',JSON.stringify(CART))
+
+// alert(`${el.name} is added to the cart`)
+
+    }
+    
+    
+
+
+
+
+
+
+
+
+
 

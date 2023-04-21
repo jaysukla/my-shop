@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
- const connection = mongoose.connect('mongodb+srv://JayShukla:jayshukla@cluster0.9zippbx.mongodb.net/myshop?retryWrites=true&w=majority')
+ const connection = mongoose.connect()
 
 const User = mongoose.model("user",mongoose.Schema({
   name:String,
