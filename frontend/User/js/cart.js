@@ -154,12 +154,45 @@ window.location.reload()
 
 let checkout = document.querySelector("#checkout") 
 checkout.addEventListener('click',CHECKOUT)
-
-function CHECKOUT(){
+ 
+async function CHECKOUT(){
     
    let login= localStorage.getItem("m-shop-login")
    console.log(login)
 if(login==='true'){
+
+let product_name=[]
+
+let price=[]
+let quantity=0;
+
+data.forEach((el)=>{
+product_name.push(el.name)
+price.push(+(el.price))
+quantity++
+})
+
+
+
+let d={
+    product_name,
+    price,
+    quantity
+}
+
+
+let res= await fetch('https://gifted-toad-pleat.cyclic.app/admin',{
+    method:'POST',
+    headers:{
+      'Content-Type': 'application/json',
+       },
+    body:JSON.stringify(d)
+
+})
+
+let response= await res.json()
+
+console.log(response)
 
 data=[];
 

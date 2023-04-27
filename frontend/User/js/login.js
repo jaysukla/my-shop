@@ -128,3 +128,22 @@ console.log(response)
 window.location.href="./index.html"
 
 }
+
+ document.querySelector("#adminpage").addEventListener('click',AP)
+
+
+
+
+
+ function AP(){
+
+
+ let admin = localStorage.getItem("m-shop-admin") || false;
+console.log(admin)
+if(admin==="true"){
+  window.location.href="../admin/admin.html"
+}
+
+    
+
+ }

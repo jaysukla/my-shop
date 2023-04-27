@@ -5,7 +5,7 @@ const watchman =(req,res,next)=>{
     jwt.verify(token, 'hehe', function(err, decoded) {
        
 if(err){
-    res.send({"msg":"Login please  "})
+    res.send({"msg":"Login please"})
 }else{
     
     next()

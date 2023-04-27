@@ -1,15 +1,42 @@
 const express = require('express');
 var cors = require('cors')
-const {connection ,Limited,New , Skin, Fashion , Fregrence ,User} = require('./schema/schema')
+const {connection ,Limited,New , Skin, Fashion , Fregrence ,User,Admin} = require('./schema/schema')
 var jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 const {watchman} = require('./middlewere/watchman')
 const app = express()
-app.use(cors())
+
 app.use(express.json())
+app.use(cors())
 
 
+
+// admin start here 
+
+app.get("/admin",async(req,res)=>{
+
+let data = await Admin.find()
+
+res.send(data)
+
+})
+
+
+
+app.post("/admin",(req,res)=>{
+    let data=req.body;
+    Admin.insertMany([data])
+    res.send({"msg":"ordered success"})
+})
+
+app.delete("/admin",async(req,res)=>{
+let id=req.query.id;
+let data=await Admin.findByIdAndDelete(id)
+
+res.send({"msg":"order deleted","data":data})
+
+})
 
 
 app.get("/", async(req,res)=>{
@@ -50,7 +77,7 @@ bcrypt.compare(data.password, hash, function(err, result) {
 if(err){
     res.send({"msg":"err","err":err})
 } else if(type=="admin"){
-    var token = jwt.sign({myshop:'MYSHOP'}, 'hehe', { expiresIn: '7d' });
+    var token = jwt.sign({myshop:'MYSHOP'}, 'hehe', { expiresIn: '100d' });
     res.send({"msg":"admin login success ","token":token})
 }  else{
     res.send({"msg":" user login Success "})

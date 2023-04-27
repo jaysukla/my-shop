@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
- const connection = mongoose.connect()
+ const connection = mongoose.connect('mongodb+srv://JayShukla:jayshukla@cluster0.9zippbx.mongodb.net/myshop?retryWrites=true&w=majority')
 
 const User = mongoose.model("user",mongoose.Schema({
   name:String,
@@ -8,6 +8,24 @@ const User = mongoose.model("user",mongoose.Schema({
   password:String,
   type:String
 }))
+
+const Admin = mongoose.model('admin',mongoose.Schema({
+product_name: {
+    type: [String], // Array of strings
+    required: true
+  },
+  price: {
+    type: [Number],
+    required: true
+  },
+  quantity: {
+    type: Number,
+   
+  }
+
+
+}))
+
 
 
  const Limited=mongoose.model("limited",mongoose.Schema({
@@ -58,4 +76,4 @@ discription:String,
 
 
 
-  module.exports ={connection ,Limited,New , Skin, Fashion , Fregrence ,User}
+  module.exports ={connection ,Limited,New , Skin, Fashion , Fregrence ,User,Admin}
